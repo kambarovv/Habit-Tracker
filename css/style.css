@@ -1,0 +1,439 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(135deg, #050505, #050712, #020617);
+  color: white;
+}
+
+.container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.boxes {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.box {
+  margin: 10px 0;
+  width: 380px;
+  padding: 20px;
+  border-radius: 20px;
+  background: rgba(15, 23, 42, 0.7);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.7);
+  text-align: center;
+}
+
+.head_box {
+  margin-bottom: 30px;
+  width: 250px;
+  padding: 10px;
+}
+
+.head_day {
+  margin-top: 10px;
+  opacity: 0.7;
+}
+
+/* Calendar */
+
+.calendar {
+  display: grid;
+  grid-template-columns: repeat(10, 20px);
+  gap: 10px;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.day {
+  width: 20px;
+  height: 20px;
+  border-radius: 6px;
+  background: #2a2a2a;
+}
+
+.level1 {
+  background: #5ec06e;
+}
+.level2 {
+  background: #126d2e;
+}
+.level3 {
+  background: #00ff51;
+}
+
+.future {
+  background: #1a1a1a;
+  opacity: 0.4;
+}
+
+.today {
+  border: 1px solid white;
+}
+
+.calendar_header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 15px 10px;
+}
+
+.calendar_date {
+  color: white;
+  font-size: 14px;
+  opacity: 0.8;
+}
+
+/* Streak */
+
+.streak_info {
+  margin: 20px 0;
+  padding: 10px 0;
+  display: flex;
+  justify-content: center;
+  border-top: 1px solid #4b4b4b;
+  border-bottom: 1px solid #4b4b4b;
+  gap: 30px;
+}
+
+.streak_info p {
+  font-size: 12px;
+  opacity: 0.7;
+}
+
+.complete_line {
+  width: 100%;
+  height: 8px;
+  background: #2a2a2a;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-top: 10px;
+}
+
+.progress {
+  height: 100%;
+  background: #09ff00;
+  width: 0%;
+  transition: 0.4s;
+}
+
+/* Habits */
+
+.habit_add {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.add_habit {
+  padding: 8px 13px;
+  border-radius: 12px;
+  border: 1px solid #4b4b4b;
+}
+
+.add_habit:hover {
+  background: white;
+  color: black;
+  border: 1px solid white;
+  cursor: pointer;
+}
+
+.habit_list {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 15px;
+  border-bottom: 1px solid #4b4b4b;
+}
+
+.habit_circle {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  border: 2px solid #777;
+  cursor: pointer;
+}
+
+.habit_circle.done {
+  background: #09ff00;
+  border: none;
+}
+
+.habit_content {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.habit_icon {
+  font-size: 18px;
+}
+
+.habit_name {
+  color: white;
+  transition: 0.3s;
+}
+
+.habit_list.done .habit_name {
+  color: #aaa;
+  text-decoration: line-through;
+}
+
+/* Footer */
+
+footer {
+  text-align: center;
+  padding: 15px;
+}
+
+footer a {
+  color: white;
+  font-size: 12px;
+  padding: 8px 12px;
+  border: 2px solid #1c1919;
+  border-radius: 8px;
+  text-decoration: none;
+}
+
+/* Overlay */
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.5);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+/* Modal */
+
+.habit_modal {
+  width: 320px;
+  padding: 30px;
+  border-radius: 20px;
+
+  background: rgba(15, 23, 42, 0.95);
+  backdrop-filter: blur(12px);
+
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.7);
+
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.habit_modal h3 {
+  text-align: center;
+  margin-bottom: 5px;
+}
+
+/* Inputs */
+
+.input_group {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  font-size: 13px;
+}
+
+.input_group input {
+  padding: 10px;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+
+  background: #1e293b;
+  color: white;
+}
+
+/* Error */
+
+.error {
+  color: #ff4d4d;
+  font-size: 12px;
+  text-align: center;
+  min-height: 14px;
+}
+
+/* Add button */
+
+.addHabitButton {
+  padding: 10px;
+  border: none;
+  border-radius: 12px;
+
+  background: #22c55e;
+  color: white;
+
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.addHabitButton:hover {
+  background: #16a34a;
+}
+
+/* Quick habits */
+
+.quickHabits {
+  margin-top: 15px;
+  text-align: center;
+}
+
+.quickHabits p {
+  font-size: 13px;
+  margin-bottom: 8px;
+  opacity: 0.8;
+}
+
+.quickButtons {
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.quickButtons button {
+  padding: 6px 12px;
+  border-radius: 10px;
+  border: none;
+
+  background: #1e293b;
+  color: white;
+
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.quickButtons button:hover {
+  background: #22c55e;
+}
+
+.habit_delete {
+  margin-left: auto;
+  cursor: pointer;
+  opacity: 0.5;
+  font-size: 14px;
+  transition: 0.2s;
+}
+
+.habit_delete:hover {
+  opacity: 1;
+  color: #ff4d4d;
+}
+
+/* ---------------- MOBILE DESIGN ---------------- */
+
+@media (max-width: 600px){
+
+  body{
+    padding:20px 0;
+  }
+
+  /* App container */
+
+  .container{
+    width:100%;
+    display:flex;
+    justify-content:center;
+    align-items:flex-start;
+  }
+
+  .boxes{
+    width:360px;
+    max-width:90%;
+  }
+
+  /* Cards */
+
+  .box{
+    width:100%;
+    padding:18px;
+    margin:12px 0;
+    border-radius:18px;
+  }
+
+  /* Header */
+
+  .head_box{
+    width:100%;
+    margin-bottom:20px;
+  }
+
+  header h2{
+    font-size:22px;
+  }
+
+  header h4{
+    font-size:13px;
+    opacity:0.7;
+  }
+
+  .head_day{
+    font-size:13px;
+  }
+
+  /* Streak section */
+
+  .streak_info{
+    gap:20px;
+  }
+
+  .streak_info div{
+    font-size:14px;
+  }
+
+  /* Habits */
+
+  .habit_list{
+    padding:12px;
+  }
+
+  .habit_name{
+    font-size:15px;
+  }
+
+  .habit_icon{
+    font-size:18px;
+  }
+
+  .habit_circle{
+    width:18px;
+    height:18px;
+  }
+
+  /* Add button */
+
+  .add_habit{
+    padding:7px 12px;
+    font-size:13px;
+  }
+
+  /* Modal */
+
+  .habit_modal{
+    width:300px;
+  }
+
+}

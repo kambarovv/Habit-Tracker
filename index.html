@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Habit Tracker</title>
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+
+  <div class="overlay" id="habitModal">
+    <div class="habit_modal">
+      <h3>Add New Habit</h3>
+
+      <div class="input_group">
+        <label>Habit Name</label>
+        <input id="habitName" type="text" placeholder="Example: Read book" />
+      </div>
+
+      <div class="input_group">
+        <label>Icon</label>
+        <input id="habitIcon" type="text" placeholder="Example: 📚" />
+      </div>
+
+      <p class="error" id="habitError"></p>
+
+      <button class="addHabitButton" id="addHabitBtn">Add Habit</button>
+
+      <div class="quickHabits">
+        <p>Quick Add</p>
+
+        <div class="quickButtons">
+          <button data-icon="🏃‍♂️" data-name="Run">Run</button>
+          <button data-icon="📚" data-name="Study">Study</button>
+          <button data-icon="🏋️‍♂️" data-name="Sport">Sport</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <body>
+    <div class="container">
+      <div class="boxes">
+        <!-- HEADER -->
+        <div class="box head_box">
+          <header>
+            <h2>Habits</h2>
+            <h4>Monitor your habits</h4>
+            <div class="head_day" id="currentDay"></div>
+          </header>
+        </div>
+
+        <!-- STREAK -->
+        <div class="box streak_box">
+          <div class="streak_day">
+            <p>🔥 <span id="streak">2</span></p>
+            <p>Day streak</p>
+          </div>
+
+          <div class="streak_info">
+            <div>
+              <div id="completedCount">0/0</div>
+              <p>Completed</p>
+            </div>
+
+            <div>
+              <div id="percent">0%</div>
+              <p>Progress</p>
+            </div>
+
+            <div>
+              <div>🔥 23</div>
+              <p>Max streak</p>
+            </div>
+          </div>
+
+          <div class="complete_line">
+            <div class="progress" id="progressBar"></div>
+          </div>
+        </div>
+
+        <!-- CALENDAR -->
+        <div class="box calendar_box">
+          <div class="calendar_header">
+            <p>Activity</p>
+            <div id="calendarDate" class="calendar_date"></div>
+          </div>
+          <div class="calendar" id="calendar"></div>
+        </div>
+
+        <!-- HABITS -->
+        <div class="box habit_list_box">
+          <div class="habit_add">
+            <p>Daily Habits</p>
+            <div class="add_habit">+ Add</div>
+          </div>
+
+          <!-- HABIT ITEM -->
+          <div class="habit_list">
+            <div class="habit_circle"></div>
+
+            <div class="habit_content">
+              <div class="habit_icon">🧘‍♂️</div>
+              <div class="habit_name">Meditate</div>
+            </div>
+          </div>
+          <div class="habit_list">
+            <div class="habit_circle"></div>
+
+            <div class="habit_content">
+              <div class="habit_icon">🏃‍♂️</div>
+              <div class="habit_name">Run</div>
+            </div>
+          </div>
+          <div class="habit_list">
+            <div class="habit_circle"></div>
+
+            <div class="habit_content">
+              <div class="habit_icon">📚</div>
+              <div class="habit_name">Read Book</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      <a href="https://github.com/kambarovv" target="_blank">
+        Created by Marco
+      </a>
+    </footer>
+
+    <script src="./js/script.js"></script>
+  </body>
+</html>
